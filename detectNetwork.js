@@ -15,7 +15,7 @@ var detectNetwork = function(cardNumber) {
   // Once you've read this, go ahead and try to implement this function, then return to the console.
   var prefix = 'cardNumber[0]' + 'cardNumber[1]';
   if ((prefix === '38' || '39') && (cardNumber.length === 14)) {
-  	return 'The Diner\'s Club';
+  	return 'Diner\'s Club';
   } else if ((prefix === '34' || '37') && (cardNumber.length === 15)) {
   	return 'American Express';
   }  
