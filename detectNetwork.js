@@ -20,8 +20,3 @@ var detectNetwork = function(cardNumber) {
   	return "American Express";
   }
 };
-
-console.log(detectNetwork('38345678901234')); // (Diner's Club)
-console.log(detectNetwork('39345678901234')); // (Diner's Club)
-console.log(detectNetwork('343456789012345')); // (American Express)
-console.log(detectNetwork('373456789012345')); // (American Express)
