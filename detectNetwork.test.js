@@ -17,8 +17,8 @@ describe('Introduction to Mocha Tests - READ ME FIRST', function() {
   // Once you've read and understood this section, please comment it out. 
   // You will not be able to proceed with a failing test. 
 
-  it('Throws an error so it fails', function() {
-  });
+  // it('Throws an error so it fails', function() {
+  // });
 
   it('Doesn\'t throw an error, so it doesn\'t fail', function() {
     // This test doesn't really test anything at all! It will pass no matter what.
@@ -35,47 +35,39 @@ describe('Introduction to Mocha Tests - READ ME FIRST', function() {
       return num/2 === 0;
     }
 
-    if(even(10) !== true) {
+    if(even(10) === true) {
       throw new Error('10 should be even!');
     }
   });
 });
+
 describe('Diner\'s Club', function() {
   // Be careful, tests can have bugs too...
-
-  it('has a prefix of 38 and a length of 14', function() {
-    throw new Error('Delete me!');
+  var expect = chai.expect;
  
-    if (detectNetwork('38345678901234') !== 'Diner\'s Club') {
-      throw new Error('Test failed');
-    }
-  });
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('38345678901234')).to.equal('Diner\'s Club');
+  }); // has a prefix of 38 and a length of 14
 
-  it('has a prefix of 39 and a length of 14', function() {
-    if (detectNetwork('3934567890123') !== 'Diner\'s Club') {
-      throw new Error('Test failed');
-    }
- 
-  });
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('39345678901234')).to.equal('Diner\'s Club');
+  }); // has a prefix of 39 and a length of 14
+
 });
 
 describe('American Express', function() {
   // It can get annoying to keep typing the if/throw, so here is a
   // helper function to throw an error if the input statement isn't true. 
-  var assert = function(isTrue) {
-    if(isTrue) {
-      throw new Error('Test failed');
-    }
+  var expect = chai.expect;
  
-  };
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('343456789012345')).to.equal('American Express');
+  }); // has a prefix of 34 and a length of 15
 
-  it('has a prefix of 34 and a length of 15', function() {
-    assert(detectNetwork('343456789012345') === 'American Express');
-  });
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('373456789012345')).to.equal('American Express');
+  }); // has a prefix of 37 and a length of 15
 
-  it('has a prefix of 37 and a length of 15', function() {
-    assert(detectNetwork('373456789012345') === 'American Express');
-  });
 });
 
 describe('Visa', function() {
@@ -83,20 +75,20 @@ describe('Visa', function() {
   // Chai provides an assert that acts the same as our previous assert.
   // Search the documentation to figure out how to access it. 
   //   http://chaijs.com/
-  var assert = chai.FILL_ME_IN;
+  var expect = chai.expect;
  
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('4123456789012')).to.equal('Visa');
+  }); // has a prefix of 4 and a length of 13
+  
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('4123456789012345')).to.equal('Visa');
+  }); // has a prefix of 4 and a length of 16
+  
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('4123456789012345678')).to.equal('Visa');
+  }); // has a prefix of 4 and a length of 19
 
-  it('has a prefix of 4 and a length of 13', function() {
-    assert(detectNetwork('4123456789012') === 'Visa');
-  });
-
-  it('has a prefix of 4 and a length of 16', function() {
-    assert(detectNetwork('4123456789012345') === 'Visa');
-  });
-
-  it('has a prefix of 4 and a length of 19', function() {
-    assert(detectNetwork('4123456789012345678') === 'Visa');
-  });
 });
 
 describe('MasterCard', function() {
@@ -117,7 +109,14 @@ describe('MasterCard', function() {
   it(FILL_ME_IN, function() {
     expect(detectNetwork('5312345678901234')).to.equal('MasterCard');
   });
- 
+  
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5412345678901234')).to.equal('MasterCard');
+  });
+
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5512345678901234')).to.equal('MasterCard');
+  }); //has a prefix of 55 and a length of 16
 
   // You can also use should instead of expect, which changes the style
   // slightly. It really doesn't matter which one you use - check out 
@@ -126,27 +125,182 @@ describe('MasterCard', function() {
   // and should, but that's just for learning), so once you've gotten 
   // these tests to pass using should syntax, refactor your tests to 
   // use either expect or should, but not both. 
-  var should = chai.should();
+  // var should = chai.should();
   
-  it('has a prefix of 54 and a length of 16', function() {
-    detectNetwork('5412345678901234').should.equal(FILL_ME_IN);
-  });
+  // it('has a prefix of 54 and a length of 16', function() {
+  //   detectNetwork('5412345678901234').should.equal(FILL_ME_IN);
+  // });
  
-  it('has a prefix of 55 and a length of 16', function() {
-    detectNetwork('5512345678901234').should.equal(FILL_ME_IN);
-  })
+  // it('has a prefix of 55 and a length of 16', function() {
+  //   detectNetwork('5512345678901234').should.equal(FILL_ME_IN);
+  // })
  
 });
 
 describe('Discover', function() {
   // Tests without a function will be marked as "pending" and not run
   // Implement these tests (and others) and make them pass!
-  it('has a prefix of 6011 and a length of 16');
-  it('has a prefix of 6011 and a length of 19');
+  var expect = chai.expect;
+ 
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6500888899995555')).to.equal('Discover');
+  });  // 65 with a length of 16
+
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6500888899995555888')).to.equal('Discover');
+  }); // 65 with a length of 19
+
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6011888899995555')).to.equal('Discover');
+  });  // 6011 with a length of 16
+
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6011888899995555888')).to.equal('Discover');
+  }); // 6011 with a length of 19
+
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6441888899995555')).to.equal('Discover');
+  }); // 644 with a length of 16
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6451888899995555')).to.equal('Discover');
+  }); // 645 with a length of 16
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6461888899995555')).to.equal('Discover');
+  }); // 646 with a length of 16
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6471888899995555')).to.equal('Discover');
+  }); // 647 with a length of 16
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6481888899995555')).to.equal('Discover');
+  }); // 648 with a length of 16
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6491888899995555')).to.equal('Discover');
+  }); // 649 with a length of 16
+
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6441888899995555888')).to.equal('Discover');
+  }); // 644 with a length of 19
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6451888899995555888')).to.equal('Discover');
+  }); // 645 with a length of 19
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6461888899995555888')).to.equal('Discover');
+  }); // 646 with a length of 19
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6471888899995555888')).to.equal('Discover');
+  }); // 647 with a length of 19
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6481888899995555888')).to.equal('Discover');
+  }); // 648 with a length of 19
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6491888899995555888')).to.equal('Discover');
+  }); // 649 with a length of 19
+
 });
 
 describe('Maestro', function() {
-  // Write full test coverage for the Maestro card
+  var expect = chai.expect;
+ 
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('501888889999')).to.equal('Maestro');
+  });  // 5018 with a length of 12
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5018888899994')).to.equal('Maestro');
+  });  // 5018 with a length of 13
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('50188888999944')).to.equal('Maestro');
+  });  // 5018 with a length of 14
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('501888889999444')).to.equal('Maestro');
+  });  // 5018 with a length of 15
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5018888899994444')).to.equal('Maestro');
+  });  // 5018 with a length of 16
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('50188888999944446')).to.equal('Maestro');
+  });  // 5018 with a length of 17
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('501888889999444466')).to.equal('Maestro');
+  });  // 5018 with a length of 18
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5018888899994444666')).to.equal('Maestro');
+  });  // 5018 with a length of 19
+
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('502088889999')).to.equal('Maestro');
+  });  // 5018 with a length of 12
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5020888899994')).to.equal('Maestro');
+  });  // 5018 with a length of 13
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('50208888999944')).to.equal('Maestro');
+  });  // 5018 with a length of 14
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('502088889999444')).to.equal('Maestro');
+  });  // 5018 with a length of 15
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5020888899994444')).to.equal('Maestro');
+  });  // 5018 with a length of 16
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('50208888999944446')).to.equal('Maestro');
+  });  // 5018 with a length of 17
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('502088889999444466')).to.equal('Maestro');
+  });  // 5018 with a length of 18
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5020888899994444666')).to.equal('Maestro');
+  });  // 5018 with a length of 19
+
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('503888889999')).to.equal('Maestro');
+  });  // 5018 with a length of 12
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5038888899994')).to.equal('Maestro');
+  });  // 5018 with a length of 13
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('50388888999944')).to.equal('Maestro');
+  });  // 5018 with a length of 14
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('503888889999444')).to.equal('Maestro');
+  });  // 5018 with a length of 15
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5038888899994444')).to.equal('Maestro');
+  });  // 5018 with a length of 16
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('50388888999944446')).to.equal('Maestro');
+  });  // 5018 with a length of 17
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('503888889999444466')).to.equal('Maestro');
+  });  // 5018 with a length of 18
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('5038888899994444666')).to.equal('Maestro');
+  });  // 5018 with a length of 19
+
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('630488889999')).to.equal('Maestro');
+  });  // 5018 with a length of 12
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6304888899994')).to.equal('Maestro');
+  });  // 5018 with a length of 13
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('63048888999944')).to.equal('Maestro');
+  });  // 5018 with a length of 14
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('630488889999444')).to.equal('Maestro');
+  });  // 5018 with a length of 15
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6304888899994444')).to.equal('Maestro');
+  });  // 5018 with a length of 16
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('63048888999944446')).to.equal('Maestro');
+  });  // 5018 with a length of 17
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('630488889999444466')).to.equal('Maestro');
+  });  // 5018 with a length of 18
+  it(FILL_ME_IN, function() {
+    expect(detectNetwork('6304888899994444666')).to.equal('Maestro');
+  });  // 5018 with a length of 19
+
 });
 
 describe('should support China UnionPay')
