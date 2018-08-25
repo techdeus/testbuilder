@@ -45,14 +45,13 @@ describe('Diner\'s Club', function() {
   // Be careful, tests can have bugs too...
   var expect = chai.expect;
  
-  it(FILL_ME_IN, function() {
+  it('has a prefix of 38 and a length of 14', function() {
     expect(detectNetwork('38345678901234')).to.equal('Diner\'s Club');
   }); // has a prefix of 38 and a length of 14
 
-  it(FILL_ME_IN, function() {
+  it('has a prefix of 39 and a length of 14', function() {
     expect(detectNetwork('39345678901234')).to.equal('Diner\'s Club');
-  }); // has a prefix of 39 and a length of 14
-
+  }); // 
 });
 
 describe('American Express', function() {
@@ -60,13 +59,13 @@ describe('American Express', function() {
   // helper function to throw an error if the input statement isn't true. 
   var expect = chai.expect;
  
-  it(FILL_ME_IN, function() {
+  it('has a prefix of 34 and a length of 16', function() {
     expect(detectNetwork('343456789012345')).to.equal('American Express');
   }); // has a prefix of 34 and a length of 15
 
-  it(FILL_ME_IN, function() {
+  it('has a prefix of 37 and a length of 15', function() {
     expect(detectNetwork('373456789012345')).to.equal('American Express');
-  }); // has a prefix of 37 and a length of 15
+  }); 
 
 });
 
@@ -77,17 +76,17 @@ describe('Visa', function() {
   //   http://chaijs.com/
   var expect = chai.expect;
  
-  it(FILL_ME_IN, function() {
+  it('has a prefix of 4 and a length of 13', function() {
     expect(detectNetwork('4123456789012')).to.equal('Visa');
-  }); // has a prefix of 4 and a length of 13
+  }); 
   
-  it(FILL_ME_IN, function() {
+  it('has a prefix of 4 and a length of 16', function() {
     expect(detectNetwork('4123456789012345')).to.equal('Visa');
-  }); // has a prefix of 4 and a length of 16
+  }); 
   
-  it(FILL_ME_IN, function() {
+  it('has a prefix of 4 and a length of 19', function() {
     expect(detectNetwork('4123456789012345678')).to.equal('Visa');
-  }); // has a prefix of 4 and a length of 19
+  }); 
 
 });
 
@@ -98,25 +97,25 @@ describe('MasterCard', function() {
   //   http://chaijs.com/api/bdd/
   var expect = chai.expect;
  
-  it(FILL_ME_IN, function() {
+  it('MC prefix of 51 and a length of 16', function() {
     expect(detectNetwork('5112345678901234')).to.equal('MasterCard');
   });
  
-  it(FILL_ME_IN, function() {
+  it('MC prefix of 52 and a length of 16', function() {
     expect(detectNetwork('5212345678901234')).to.equal('MasterCard');
   });
  
-  it(FILL_ME_IN, function() {
+  it('MC prefix of 53 and a length of 16', function() {
     expect(detectNetwork('5312345678901234')).to.equal('MasterCard');
   });
   
-  it(FILL_ME_IN, function() {
+  it('MC prefix of 54 and a length of 16', function() {
     expect(detectNetwork('5412345678901234')).to.equal('MasterCard');
   });
 
-  it(FILL_ME_IN, function() {
+  it('MC prefix of 55 and a length of 16', function() {
     expect(detectNetwork('5512345678901234')).to.equal('MasterCard');
-  }); //has a prefix of 55 and a length of 16
+  });
 
   // You can also use should instead of expect, which changes the style
   // slightly. It really doesn't matter which one you use - check out 
@@ -142,21 +141,31 @@ describe('Discover', function() {
   // Implement these tests (and others) and make them pass!
   var expect = chai.expect;
  
-  it(FILL_ME_IN, function() {
+  it('65 with a length of 16', function() {
     expect(detectNetwork('6500888899995555')).to.equal('Discover');
-  });  // 65 with a length of 16
+  });
 
-  it(FILL_ME_IN, function() {
+  it('65 with a length of 16', function() {
     expect(detectNetwork('6500888899995555888')).to.equal('Discover');
-  }); // 65 with a length of 19
+  });
 
-  it(FILL_ME_IN, function() {
+  it('6011 with a length of 16', function() {
     expect(detectNetwork('6011888899995555')).to.equal('Discover');
-  });  // 6011 with a length of 16
+  });
 
-  it(FILL_ME_IN, function() {
+  it('6011 with a length of 19', function() {
     expect(detectNetwork('6011888899995555888')).to.equal('Discover');
-  }); // 6011 with a length of 19
+  }); 
+
+  // for (var prefix = 644; prefix <= 649; prefix++) {  
+  //   for (var length = 16; length <= 19; length+=3) {
+  //     (function(prefix, length) {    
+  //       it('Discover credit card with a prefix of: ' + prefix + ' and a length of :' + length + '.', function() {
+  //       expect(detectNetwork(prefix + '0'.repeat(length - prefix.length))).to.equal('Discover');
+  //       });    
+  //     })(prefix, length);
+  //   }
+  // }
 
   it(FILL_ME_IN, function() {
     expect(detectNetwork('6441888899995555')).to.equal('Discover');
@@ -176,6 +185,7 @@ describe('Discover', function() {
   it(FILL_ME_IN, function() {
     expect(detectNetwork('6491888899995555')).to.equal('Discover');
   }); // 649 with a length of 16
+
 
   it(FILL_ME_IN, function() {
     expect(detectNetwork('6441888899995555888')).to.equal('Discover');
@@ -201,6 +211,15 @@ describe('Discover', function() {
 describe('Maestro', function() {
   var expect = chai.expect;
  
+  // for (var prefix = 5018; prefix <= 5020; prefix+=2) {  
+  //   for (var length = 12; length <= 19; length++) {
+  //     (function(prefix, length) {    
+  //       it('Maestro credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
+  //       expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('Maestro');
+  //       });    
+  //     })(prefix, length)
+  //   }
+  // }
   it(FILL_ME_IN, function() {
     expect(detectNetwork('501888889999')).to.equal('Maestro');
   });  // 5018 with a length of 12
@@ -251,6 +270,16 @@ describe('Maestro', function() {
     expect(detectNetwork('5020888899994444666')).to.equal('Maestro');
   });  // 5018 with a length of 19
 
+  // for (var prefix = 5038; prefix <= 5038; prefix++) {  
+  //   for (var length = 12; length <= 19; length++) {
+  //     (function(prefix, length) {    
+  //       it('Maestro credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
+  //       expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('Maestro');
+  //       });    
+  //     })(prefix, length)
+  //   }
+  // }
+
   it(FILL_ME_IN, function() {
     expect(detectNetwork('503888889999')).to.equal('Maestro');
   });  // 5018 with a length of 12
@@ -275,6 +304,16 @@ describe('Maestro', function() {
   it(FILL_ME_IN, function() {
     expect(detectNetwork('5038888899994444666')).to.equal('Maestro');
   });  // 5018 with a length of 19
+
+  // for (var prefix = 6304; prefix <= 6304; prefix++) {  
+  //   for (var length = 12; length <= 19; length++) {
+  //     (function(prefix, length) {    
+  //       it('Maestro credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
+  //       expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('Maestro');
+  //       });    
+  //     })(prefix, length)
+  //   }
+  // }
 
   it(FILL_ME_IN, function() {
     expect(detectNetwork('630488889999')).to.equal('Maestro');
@@ -303,5 +342,125 @@ describe('Maestro', function() {
 
 });
 
-describe('should support China UnionPay')
-describe('should support Switch')
+describe('China UnionPay', function () {
+  var expect = chai.expect;
+  
+  for (var prefix = 624; prefix <= 626; prefix++) {  
+    for (var length = 16; length <= 19; length++) {
+      (function(prefix, length) {    
+        it('ChinaPay credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
+        expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('China UnionPay');
+        });    
+      })(prefix, length)
+    }
+  }
+
+
+  for (var prefix = 622126; prefix <= 622925; prefix++) {  
+    for (var length = 16; length <= 19; length++) {
+      (function(prefix, length) {    
+        it('ChinaPay credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
+        expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('China UnionPay');
+        });    
+      })(prefix, length)
+    }
+  }
+
+
+  for (var prefix = 6282; prefix <= 6288; prefix++) {  
+    for (var length = 16; length <= 19; length++) {
+      (function(prefix, length) {    
+        it('ChinaPay credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
+        expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('China UnionPay');
+        });    
+      })(prefix, length)
+    }
+  }
+
+});
+
+
+describe('Switch', function() {
+
+var expect = chai.expect;
+  it('Switch CreditCard, Prefix of 4903 Length of 16', function() {
+    expect(detectNetwork('4903888899994444')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 4903 Length of 18', function() {
+    expect(detectNetwork('490388889999444400')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 4903 Length of 19', function() {
+    expect(detectNetwork('4903888899994444000')).to.equal('Switch');
+  });
+
+  it('Switch CreditCard, Prefix of 4905 Length of 16', function() {
+    expect(detectNetwork('4905888899994444')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 4905 Length of 18', function() {
+    expect(detectNetwork('490588889999444400')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 4905 Length of 19', function() {
+    expect(detectNetwork('4905888899994444000')).to.equal('Switch');
+  });
+
+  it('Switch CreditCard, Prefix of 4911 Length of 16', function() {
+    expect(detectNetwork('4911888899994444')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 4911 Length of 18', function() {
+    expect(detectNetwork('491188889999444400')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 4911 Length of 19', function() {
+    expect(detectNetwork('4911888899994444000')).to.equal('Switch');
+  });
+
+  it('Switch CreditCard, Prefix of 4936 Length of 16', function() {
+    expect(detectNetwork('4936888899994444')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 4936 Length of 18', function() {
+    expect(detectNetwork('493688889999444400')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 4936 Length of 19', function() {
+    expect(detectNetwork('4936888899994444000')).to.equal('Switch');
+  });
+
+  it('Switch CreditCard, Prefix of 6333 Length of 16', function() {
+    expect(detectNetwork('6333888899994444')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 6333 Length of 18', function() {
+    expect(detectNetwork('633388889999444400')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 6333 Length of 19', function() {
+    expect(detectNetwork('6333888899994444000')).to.equal('Switch');
+  });
+
+  it('Switch CreditCard, Prefix of 6759 Length of 16', function() {
+    expect(detectNetwork('6759888899994444')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 6759 Length of 18', function() {
+    expect(detectNetwork('675988889999444400')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 6759 Length of 19', function() {
+    expect(detectNetwork('6759888899994444000')).to.equal('Switch');
+  });
+
+  it('Switch CreditCard, Prefix of 564182 Length of 16', function() {
+    expect(detectNetwork('5641828899994444')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 564182 Length of 18', function() {
+    expect(detectNetwork('564182889999444400')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 564182 Length of 19', function() {
+    expect(detectNetwork('5641828899994444000')).to.equal('Switch');
+  });
+
+  it('Switch CreditCard, Prefix of 633110 Length of 16', function() {
+    expect(detectNetwork('6331108899994444')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 633110 Length of 18', function() {
+    expect(detectNetwork('633110889999444400')).to.equal('Switch');
+  });
+  it('Switch CreditCard, Prefix of 633110 Length of 19', function() {
+    expect(detectNetwork('63311048899994444000')).to.equal('Switch');
+  });
+
+});
