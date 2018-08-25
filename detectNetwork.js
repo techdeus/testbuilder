@@ -26,7 +26,7 @@ var detectNetwork = function(cardNumber) {
   else if ((prefixTwo === 34 || prefixTwo === 37) && (cardLength === 15)) {
   	return "American Express";
   }
-  else if ( (prefixfour === 4903 || prefixFour === 4905 || prefixFour === 4911 || prefixFour === 4936 || prefixFour === 6333 || prefixFour === 6759 || prefixSix === 564182 || prefixSix === 633110 )  
+  else if ( (prefixFour === 4903 || prefixFour === 4905 || prefixFour === 4911 || prefixFour === 4936 || prefixFour === 6333 || prefixFour === 6759 || prefixSix === 564182 || prefixSix === 633110 )  
     && (cardLength === 16 || cardLength ===18 || cardLength ===19) ) {
     return "Switch";
   }

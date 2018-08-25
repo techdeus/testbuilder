@@ -167,42 +167,42 @@ describe('Discover', function() {
   //   }
   // }
 
-  it(FILL_ME_IN, function() {
+  it('644 with a length of 16', function() {
     expect(detectNetwork('6441888899995555')).to.equal('Discover');
   }); // 644 with a length of 16
-  it(FILL_ME_IN, function() {
+  it('645 with a length of 16', function() {
     expect(detectNetwork('6451888899995555')).to.equal('Discover');
   }); // 645 with a length of 16
-  it(FILL_ME_IN, function() {
+  it('646 with a length of 16', function() {
     expect(detectNetwork('6461888899995555')).to.equal('Discover');
   }); // 646 with a length of 16
-  it(FILL_ME_IN, function() {
+  it('647 with a length of 16', function() {
     expect(detectNetwork('6471888899995555')).to.equal('Discover');
   }); // 647 with a length of 16
-  it(FILL_ME_IN, function() {
+  it('648 with a length of 16', function() {
     expect(detectNetwork('6481888899995555')).to.equal('Discover');
   }); // 648 with a length of 16
-  it(FILL_ME_IN, function() {
+  it('649 with a length of 16', function() {
     expect(detectNetwork('6491888899995555')).to.equal('Discover');
   }); // 649 with a length of 16
 
 
-  it(FILL_ME_IN, function() {
+  it('644 with a length of 19', function() {
     expect(detectNetwork('6441888899995555888')).to.equal('Discover');
   }); // 644 with a length of 19
-  it(FILL_ME_IN, function() {
+  it('645 with a length of 19', function() {
     expect(detectNetwork('6451888899995555888')).to.equal('Discover');
   }); // 645 with a length of 19
-  it(FILL_ME_IN, function() {
+  it('646 with a length of 19', function() {
     expect(detectNetwork('6461888899995555888')).to.equal('Discover');
   }); // 646 with a length of 19
-  it(FILL_ME_IN, function() {
+  it('647 with a length of 19', function() {
     expect(detectNetwork('6471888899995555888')).to.equal('Discover');
   }); // 647 with a length of 19
-  it(FILL_ME_IN, function() {
+  it('648 with a length of 19', function() {
     expect(detectNetwork('6481888899995555888')).to.equal('Discover');
   }); // 648 with a length of 19
-  it(FILL_ME_IN, function() {
+  it('649 with a length of 19', function() {
     expect(detectNetwork('6491888899995555888')).to.equal('Discover');
   }); // 649 with a length of 19
 
@@ -211,134 +211,134 @@ describe('Discover', function() {
 describe('Maestro', function() {
   var expect = chai.expect;
  
-  // for (var prefix = 5018; prefix <= 5020; prefix+=2) {  
-  //   for (var length = 12; length <= 19; length++) {
-  //     (function(prefix, length) {    
-  //       it('Maestro credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
-  //       expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('Maestro');
-  //       });    
-  //     })(prefix, length)
-  //   }
-  // }
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('501888889999')).to.equal('Maestro');
-  });  // 5018 with a length of 12
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('5018888899994')).to.equal('Maestro');
-  });  // 5018 with a length of 13
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('50188888999944')).to.equal('Maestro');
-  });  // 5018 with a length of 14
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('501888889999444')).to.equal('Maestro');
-  });  // 5018 with a length of 15
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('5018888899994444')).to.equal('Maestro');
-  });  // 5018 with a length of 16
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('50188888999944446')).to.equal('Maestro');
-  });  // 5018 with a length of 17
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('501888889999444466')).to.equal('Maestro');
-  });  // 5018 with a length of 18
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('5018888899994444666')).to.equal('Maestro');
-  });  // 5018 with a length of 19
+  for (var prefix = 5018; prefix <= 5020; prefix+=2) {  
+    for (var length = 12; length <= 19; length++) {
+      (function(prefix, length) {    
+        it('Maestro credit card with a prefix of: ' + prefix + ' and a length of: ' + length + '.', function() {
+        expect(detectNetwork(prefix + '0'.repeat(length - String(prefix).length) )).to.equal('Maestro');
+        });    
+      })(prefix, length)
+    }
+  }
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('501888889999')).to.equal('Maestro');
+  // });  // 5018 with a length of 12
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('5018888899994')).to.equal('Maestro');
+  // });  // 5018 with a length of 13
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('50188888999944')).to.equal('Maestro');
+  // });  // 5018 with a length of 14
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('501888889999444')).to.equal('Maestro');
+  // });  // 5018 with a length of 15
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('5018888899994444')).to.equal('Maestro');
+  // });  // 5018 with a length of 16
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('50188888999944446')).to.equal('Maestro');
+  // });  // 5018 with a length of 17
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('501888889999444466')).to.equal('Maestro');
+  // });  // 5018 with a length of 18
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('5018888899994444666')).to.equal('Maestro');
+  // });  // 5018 with a length of 19
 
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('502088889999')).to.equal('Maestro');
-  });  // 5018 with a length of 12
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('5020888899994')).to.equal('Maestro');
-  });  // 5018 with a length of 13
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('50208888999944')).to.equal('Maestro');
-  });  // 5018 with a length of 14
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('502088889999444')).to.equal('Maestro');
-  });  // 5018 with a length of 15
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('5020888899994444')).to.equal('Maestro');
-  });  // 5018 with a length of 16
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('50208888999944446')).to.equal('Maestro');
-  });  // 5018 with a length of 17
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('502088889999444466')).to.equal('Maestro');
-  });  // 5018 with a length of 18
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('5020888899994444666')).to.equal('Maestro');
-  });  // 5018 with a length of 19
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('502088889999')).to.equal('Maestro');
+  // });  // 5018 with a length of 12
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('5020888899994')).to.equal('Maestro');
+  // });  // 5018 with a length of 13
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('50208888999944')).to.equal('Maestro');
+  // });  // 5018 with a length of 14
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('502088889999444')).to.equal('Maestro');
+  // });  // 5018 with a length of 15
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('5020888899994444')).to.equal('Maestro');
+  // });  // 5018 with a length of 16
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('50208888999944446')).to.equal('Maestro');
+  // });  // 5018 with a length of 17
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('502088889999444466')).to.equal('Maestro');
+  // });  // 5018 with a length of 18
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('5020888899994444666')).to.equal('Maestro');
+  // });  // 5018 with a length of 19
 
-  // for (var prefix = 5038; prefix <= 5038; prefix++) {  
-  //   for (var length = 12; length <= 19; length++) {
-  //     (function(prefix, length) {    
-  //       it('Maestro credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
-  //       expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('Maestro');
-  //       });    
-  //     })(prefix, length)
-  //   }
-  // }
+  for (var prefix = 5038; prefix <= 5038; prefix++) {  
+    for (var length = 12; length <= 19; length++) {
+      (function(prefix, length) {    
+        it('Maestro credit card with a prefix of: ' + prefix + ' and a length of: ' + length + '.', function() {
+        expect(detectNetwork(prefix + '0'.repeat(length - String(prefix).length) )).to.equal('Maestro');
+        });    
+      })(prefix, length)
+    }
+  }
 
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('503888889999')).to.equal('Maestro');
-  });  // 5018 with a length of 12
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('5038888899994')).to.equal('Maestro');
-  });  // 5018 with a length of 13
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('50388888999944')).to.equal('Maestro');
-  });  // 5018 with a length of 14
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('503888889999444')).to.equal('Maestro');
-  });  // 5018 with a length of 15
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('5038888899994444')).to.equal('Maestro');
-  });  // 5018 with a length of 16
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('50388888999944446')).to.equal('Maestro');
-  });  // 5018 with a length of 17
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('503888889999444466')).to.equal('Maestro');
-  });  // 5018 with a length of 18
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('5038888899994444666')).to.equal('Maestro');
-  });  // 5018 with a length of 19
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('503888889999')).to.equal('Maestro');
+  // });  // 5018 with a length of 12
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('5038888899994')).to.equal('Maestro');
+  // });  // 5018 with a length of 13
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('50388888999944')).to.equal('Maestro');
+  // });  // 5018 with a length of 14
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('503888889999444')).to.equal('Maestro');
+  // });  // 5018 with a length of 15
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('5038888899994444')).to.equal('Maestro');
+  // });  // 5018 with a length of 16
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('50388888999944446')).to.equal('Maestro');
+  // });  // 5018 with a length of 17
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('503888889999444466')).to.equal('Maestro');
+  // });  // 5018 with a length of 18
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('5038888899994444666')).to.equal('Maestro');
+  // });  // 5018 with a length of 19
 
-  // for (var prefix = 6304; prefix <= 6304; prefix++) {  
-  //   for (var length = 12; length <= 19; length++) {
-  //     (function(prefix, length) {    
-  //       it('Maestro credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
-  //       expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('Maestro');
-  //       });    
-  //     })(prefix, length)
-  //   }
-  // }
+  for (var prefix = 6304; prefix <= 6304; prefix++) {  
+    for (var length = 12; length <= 19; length++) {
+      (function(prefix, length) {    
+        it('Maestro credit card with a prefix of: ' + prefix + ' and a length of: ' + length + '.', function() {
+        expect(detectNetwork(prefix + '0'.repeat(length - String(prefix).length) )).to.equal('Maestro');
+        });    
+      })(prefix, length)
+    }
+  }
 
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('630488889999')).to.equal('Maestro');
-  });  // 5018 with a length of 12
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('6304888899994')).to.equal('Maestro');
-  });  // 5018 with a length of 13
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('63048888999944')).to.equal('Maestro');
-  });  // 5018 with a length of 14
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('630488889999444')).to.equal('Maestro');
-  });  // 5018 with a length of 15
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('6304888899994444')).to.equal('Maestro');
-  });  // 5018 with a length of 16
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('63048888999944446')).to.equal('Maestro');
-  });  // 5018 with a length of 17
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('630488889999444466')).to.equal('Maestro');
-  });  // 5018 with a length of 18
-  it(FILL_ME_IN, function() {
-    expect(detectNetwork('6304888899994444666')).to.equal('Maestro');
-  });  // 5018 with a length of 19
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('630488889999')).to.equal('Maestro');
+  // });  // 5018 with a length of 12
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('6304888899994')).to.equal('Maestro');
+  // });  // 5018 with a length of 13
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('63048888999944')).to.equal('Maestro');
+  // });  // 5018 with a length of 14
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('630488889999444')).to.equal('Maestro');
+  // });  // 5018 with a length of 15
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('6304888899994444')).to.equal('Maestro');
+  // });  // 5018 with a length of 16
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('63048888999944446')).to.equal('Maestro');
+  // });  // 5018 with a length of 17
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('630488889999444466')).to.equal('Maestro');
+  // });  // 5018 with a length of 18
+  // it(FILL_ME_IN, function() {
+  //   expect(detectNetwork('6304888899994444666')).to.equal('Maestro');
+  // });  // 5018 with a length of 19
 
 });
 
@@ -348,36 +348,44 @@ describe('China UnionPay', function () {
   for (var prefix = 624; prefix <= 626; prefix++) {  
     for (var length = 16; length <= 19; length++) {
       (function(prefix, length) {    
-        it('ChinaPay credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
-        expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('China UnionPay');
+        it('ChinaPay credit card with a prefix of: ' + prefix + ' and a length of: ' + length + '.', function() {
+        expect(detectNetwork(prefix + '0'.repeat(length - String(prefix).length) )).to.equal('China UnionPay');
         });    
       })(prefix, length)
     }
   }
-
-
-  for (var prefix = 622126; prefix <= 622925; prefix++) {  
-    for (var length = 16; length <= 19; length++) {
-      (function(prefix, length) {    
-        it('ChinaPay credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
-        expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('China UnionPay');
-        });    
-      })(prefix, length)
-    }
-  }
-
 
   for (var prefix = 6282; prefix <= 6288; prefix++) {  
     for (var length = 16; length <= 19; length++) {
       (function(prefix, length) {    
-        it('ChinaPay credit card with a prefix of: ' + prefix + 'and a length of:' + length + '.', function() {
-        expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('China UnionPay');
+        it('ChinaPay credit card with a prefix of: ' + prefix + ' and a length of: ' + length + '.', function() {
+        expect(detectNetwork(prefix + '0'.repeat(length - String(prefix).length) )).to.equal('China UnionPay');
+        });    
+      })(prefix, length)
+    }
+  }
+  for (var prefix = 622126; prefix <= 622925; prefix++) {  
+    for (var length = 16; length <= 19; length++) {
+      (function(prefix, length) {    
+        it('ChinaPay credit card with a prefix of: ' + prefix + ' and a length of: ' + length + '.', function() {
+        expect(detectNetwork(prefix + '0'.repeat(length - String(prefix).length) )).to.equal('China UnionPay');
         });    
       })(prefix, length)
     }
   }
 
+  //   for (var prefix = 622126; prefix <= 622925; prefix++) {  
+  //   for (var length = 16; length <= 19; length++) {
+  //     (function(prefix, length) {    
+  //       it('ChinaPay credit card with a prefix of: ' + prefix + ' and a length of: ' + length + '.', function() {
+  //       expect(detectNetwork(prefix + '0'.repeat(length - prefix.length) )).to.equal('China UnionPay');
+  //       });    
+  //     })(prefix, length)
+  //   }
+  // }
+
 });
+
 
 
 describe('Switch', function() {
@@ -460,7 +468,8 @@ var expect = chai.expect;
     expect(detectNetwork('633110889999444400')).to.equal('Switch');
   });
   it('Switch CreditCard, Prefix of 633110 Length of 19', function() {
-    expect(detectNetwork('63311048899994444000')).to.equal('Switch');
+    expect(detectNetwork('6331104889999444400')).to.equal('Switch');
   });
 
 });
+
